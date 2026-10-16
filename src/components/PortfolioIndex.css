@@ -1,0 +1,288 @@
+
+/* =========================================
+   PORTFOLIO — INTERACTIVE CHAPTER INDEX
+   ========================================= */
+
+.portfolio-index {
+  width: 100%;
+  background: #fff7ef;
+  color: #531b2b;
+  padding: 110px 7% 80px;
+}
+
+/* HEADING */
+
+.portfolio-index-heading {
+  max-width: 1100px;
+  margin-bottom: 75px;
+}
+
+.portfolio-index-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #a34457;
+}
+
+.portfolio-index-heading h2 {
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: clamp(65px, 9vw, 145px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.065em;
+  margin: 28px 0 30px;
+}
+
+.portfolio-index-heading h2 em {
+  color: #a34457;
+  font-weight: 400;
+}
+
+.portfolio-index-heading p {
+  max-width: 470px;
+  margin-left: auto;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* CHAPTER LIST */
+
+.portfolio-chapter-list {
+  border-top: 1px solid rgba(83, 27, 43, 0.25);
+}
+
+.portfolio-chapter {
+  border-bottom: 1px solid rgba(83, 27, 43, 0.25);
+}
+
+/* CLICKABLE CHAPTER */
+
+.portfolio-chapter-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 35px 15px;
+  border: none;
+  background: transparent;
+  color: #531b2b;
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    background 0.35s ease,
+    padding 0.35s ease;
+}
+
+.portfolio-chapter-button:hover {
+  background: #eedbcc;
+  padding-left: 28px;
+}
+
+.portfolio-chapter.is-open .portfolio-chapter-button {
+  background: #eedbcc;
+}
+
+/* CHAPTER NUMBER */
+
+.portfolio-chapter-number {
+  align-self: flex-start;
+  padding-top: 12px;
+  min-width: 45px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #a34457;
+}
+
+/* CHAPTER TITLE */
+
+.portfolio-chapter-name {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.portfolio-chapter-subtitle {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: #a34457;
+}
+
+.portfolio-chapter-title {
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: clamp(32px, 4.5vw, 65px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+/* PLUS / MINUS ICON */
+
+.portfolio-chapter-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(83, 27, 43, 0.4);
+  border-radius: 50%;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.portfolio-chapter-button:hover .portfolio-chapter-icon,
+.portfolio-chapter.is-open .portfolio-chapter-icon {
+  background: #531b2b;
+  color: #fff7ef;
+  transform: rotate(90deg);
+}
+
+/* EXPANDED CHAPTER */
+
+.portfolio-chapter-panel {
+  overflow: hidden;
+  background: #fff7ef;
+  animation: portfolio-reveal 0.45s ease;
+}
+
+/*
+  Existing sections already have their own
+  background colors and internal padding.
+  Remove extra outer padding when expanded.
+*/
+
+.portfolio-chapter-panel > section,
+.portfolio-chapter-panel > footer {
+  width: 100%;
+}
+
+/* GENTLE OPEN ANIMATION */
+
+@keyframes portfolio-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FOOTER */
+
+.portfolio-index-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 75px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(83, 27, 43, 0.25);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+}
+
+.portfolio-index-footer span:last-child {
+  color: #b99458;
+  font-size: 28px;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+  .portfolio-index {
+    padding: 90px 6% 65px;
+  }
+
+  .portfolio-index-heading h2 {
+    font-size: clamp(55px, 10vw, 100px);
+  }
+
+  .portfolio-chapter-button {
+    gap: 20px;
+    padding: 30px 10px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+  .portfolio-index {
+    padding: 75px 5% 45px;
+  }
+
+  .portfolio-index-heading {
+    margin-bottom: 45px;
+  }
+
+  .portfolio-index-heading h2 {
+    font-size: clamp(48px, 12vw, 75px);
+  }
+
+  .portfolio-index-heading p {
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .portfolio-chapter-button {
+    gap: 12px;
+    padding: 25px 5px;
+  }
+
+  .portfolio-chapter-button:hover {
+    padding-left: 10px;
+  }
+
+  .portfolio-chapter-number {
+    min-width: 25px;
+    font-size: 10px;
+    padding-top: 8px;
+  }
+
+  .portfolio-chapter-subtitle {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  .portfolio-chapter-title {
+    font-size: clamp(25px, 7vw, 38px);
+  }
+
+  .portfolio-chapter-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .portfolio-chapter-icon svg {
+    width: 19px;
+  }
+
+  .portfolio-index-footer {
+    margin-top: 45px;
+    font-size: 9px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-chapter-panel {
+    animation: none;
+  }
+
+  .portfolio-chapter-button,
+  .portfolio-chapter-icon {
+    transition: none;
+  }
+}

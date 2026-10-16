@@ -1,0 +1,216 @@
+
+/* CONTACT — FINAL MAGAZINE COVER */
+
+.contact-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--cherry);
+  color: var(--ivory);
+  padding: 75px 7% 30px;
+}
+
+.contact-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.contact-decoration {
+  color: var(--gold);
+  font-size: 36px;
+}
+
+/* MAIN HEADING */
+
+.contact-main {
+  padding: 100px 0 65px;
+}
+
+.contact-pretitle {
+  color: var(--rose);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  line-height: 1.8;
+}
+
+.contact-main h2 {
+  font-size: clamp(65px, 10vw, 160px);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  margin: 35px 0 45px;
+}
+
+.contact-main h2 em {
+  color: var(--rose);
+  font-weight: 400;
+}
+
+.contact-description {
+  max-width: 430px;
+  margin-left: auto;
+  color: var(--champagne);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* CONTACT LINKS */
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 45px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 25px 22px;
+  border: 1px solid rgba(238, 219, 204, 0.35);
+  border-radius: 8px;
+  color: var(--ivory);
+  text-decoration: none;
+  font-size: 16px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-link:hover {
+  background: var(--champagne);
+  color: var(--cherry);
+  transform: translateY(-5px);
+}
+
+.contact-link-icon {
+  color: var(--gold);
+}
+
+.contact-link > svg:last-child {
+  margin-left: auto;
+}
+
+.contact-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--champagne);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* SIGNATURE */
+
+.contact-signature {
+  margin-top: 115px;
+  text-align: center;
+}
+
+.contact-signature > span {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.contact-signature h3 {
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: clamp(70px, 15vw, 250px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.075em;
+  white-space: nowrap;
+  margin: 25px 0 45px;
+}
+
+/* FOOTER */
+
+.contact-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(238, 219, 204, 0.3);
+  color: var(--champagne);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.back-to-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--champagne);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+  color: var(--rose);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-signature h3 {
+    font-size: clamp(60px, 14vw, 140px);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 55px 6% 25px;
+  }
+
+  .contact-main {
+    padding: 75px 0 45px;
+  }
+
+  .contact-main h2 {
+    font-size: clamp(52px, 12vw, 95px);
+  }
+
+  .contact-description {
+    margin-left: 0;
+  }
+
+  .contact-link {
+    padding: 20px;
+  }
+
+  .contact-signature {
+    margin-top: 80px;
+  }
+
+  .contact-signature h3 {
+    font-size: 14vw;
+  }
+
+  .contact-bottom {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-link,
+  .back-to-top {
+    transition: none;
+  }
+
+  .contact-link:hover {
+    transform: none;
+  }
+}

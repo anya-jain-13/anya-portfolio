@@ -1,0 +1,126 @@
+
+/* ========================================
+   CHERRY CURSOR — SHARP & RESPONSIVE
+   ======================================== */
+
+.cherry-cursor {
+  position: fixed;
+
+  top: -100px;
+  left: -100px;
+
+  width: 30px;
+  height: 33px;
+
+  z-index: 99999;
+
+  pointer-events: none;
+  user-select: none;
+
+  opacity: 0;
+
+  /*
+    Center the illustration on the mouse.
+    No delayed-follow animation.
+  */
+  transform: translate(-50%, -50%);
+
+  transition: opacity 0.12s ease;
+
+  will-change: left, top;
+  contain: layout style;
+}
+
+.cherry-cursor-visible {
+  opacity: 1;
+}
+
+/* SHARP SVG */
+
+.cherry-cursor svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  /*
+    SVG stays vector-based and sharp.
+    Avoid blur and large shadows.
+  */
+  filter: none;
+
+  transform-origin: center;
+  transition: transform 0.16s ease;
+}
+
+/* HOVER EFFECT */
+
+.cherry-cursor-hover svg {
+  transform: scale(1.18);
+}
+
+/* CLICK EFFECT */
+
+.cherry-cursor-click svg {
+  transform: scale(0.88);
+}
+
+/* GOLD SPARKLE */
+
+.cherry-sparkle {
+  transform-box: fill-box;
+  transform-origin: center;
+
+  animation: cherry-twinkle 2.5s ease-in-out infinite;
+}
+
+@keyframes cherry-twinkle {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* CUSTOM CURSOR ON DESKTOP */
+
+@media (hover: hover) and (pointer: fine) {
+  body,
+  body *,
+  body *::before,
+  body *::after {
+    cursor: none !important;
+  }
+}
+
+/* NORMAL CURSOR ON TOUCH DEVICES */
+
+@media (hover: none), (pointer: coarse) {
+  .cherry-cursor {
+    display: none !important;
+  }
+
+  body,
+  body * {
+    cursor: auto !important;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .cherry-cursor,
+  .cherry-cursor svg {
+    transition: none;
+  }
+
+  .cherry-sparkle {
+    animation: none;
+  }
+}

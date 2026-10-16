@@ -1,0 +1,242 @@
+
+/* SKILLS — INTERACTIVE CABINET */
+
+.skills-section {
+  background: var(--champagne);
+  color: var(--cherry);
+  padding: 115px 7% 65px;
+}
+
+.skills-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 45px;
+  margin-bottom: 75px;
+}
+
+.skills-label {
+  color: var(--berry);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.skills-header h2 {
+  font-size: clamp(58px, 8vw, 120px);
+  line-height: 1.05;
+  letter-spacing: -0.06em;
+  margin: 28px 0 0;
+}
+
+.skills-header h2 em {
+  color: var(--berry);
+  font-weight: 400;
+}
+
+.skills-header > p {
+  max-width: 340px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* CABINET */
+
+.skills-cabinet {
+  border-top: 1px solid rgba(83, 27, 43, 0.25);
+}
+
+.skill-drawer {
+  border-bottom: 1px solid rgba(83, 27, 43, 0.25);
+}
+
+.skill-drawer-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 30px 12px;
+  border: none;
+  background: transparent;
+  color: var(--cherry);
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.skill-drawer-trigger:hover,
+.skill-drawer.open .skill-drawer-trigger {
+  background: rgba(255, 247, 239, 0.55);
+}
+
+.skill-drawer-number {
+  align-self: flex-start;
+  padding-top: 8px;
+  color: var(--berry);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.skill-drawer-icon {
+  color: var(--berry);
+}
+
+.skill-drawer-heading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-drawer-subtitle {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--berry);
+}
+
+.skill-drawer-title {
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: clamp(28px, 3.5vw, 49px);
+  line-height: 1.2;
+}
+
+.skill-drawer-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border: 1px solid rgba(83, 27, 43, 0.4);
+  border-radius: 50%;
+}
+
+.skill-drawer.open .skill-drawer-toggle {
+  background: var(--cherry);
+  color: var(--ivory);
+}
+
+/* EXPANDED CONTENT */
+
+.skill-drawer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 30px 35px 95px;
+  animation: drawer-reveal 0.3s ease;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 850px;
+}
+
+.skill-tags span {
+  padding: 12px 19px;
+  border: 1px solid rgba(83, 27, 43, 0.3);
+  border-radius: 40px;
+  background: var(--ivory);
+  font-size: 13px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.skill-tags span:hover {
+  background: var(--cherry);
+  color: var(--ivory);
+}
+
+.skill-drawer-decoration {
+  color: var(--gold);
+}
+
+@keyframes drawer-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FOOTER */
+
+.skills-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 65px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(83, 27, 43, 0.25);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.skills-footer span:last-child {
+  color: var(--gold);
+  font-size: 28px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 85px 6% 45px;
+  }
+
+  .skills-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 45px;
+  }
+
+  .skills-header h2 {
+    font-size: clamp(50px, 11vw, 85px);
+  }
+
+  .skill-drawer-trigger {
+    gap: 12px;
+    padding: 25px 5px;
+  }
+
+  .skill-drawer-icon svg {
+    width: 21px;
+  }
+
+  .skill-drawer-title {
+    font-size: 26px;
+  }
+
+  .skill-drawer-toggle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .skill-drawer-content {
+    padding: 0 5px 30px 25px;
+  }
+
+  .skill-tags {
+    gap: 8px;
+  }
+
+  .skill-tags span {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-drawer-content {
+    animation: none;
+  }
+
+  .skill-drawer-trigger,
+  .skill-tags span {
+    transition: none;
+  }
+}

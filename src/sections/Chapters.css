@@ -1,0 +1,278 @@
+
+/* CHAPTER COLLECTION */
+
+.chapters-section {
+  background: var(--ivory);
+  color: var(--cherry);
+  padding: 115px 7% 65px;
+}
+
+.chapters-header {
+  margin-bottom: 75px;
+}
+
+.chapters-label {
+  color: var(--berry);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.chapters-header h2 {
+  font-size: clamp(60px, 8vw, 120px);
+  line-height: 1.04;
+  letter-spacing: -0.06em;
+  margin: 28px 0;
+}
+
+.chapters-header h2 em {
+  color: var(--berry);
+  font-weight: 400;
+}
+
+.chapters-header > p {
+  max-width: 470px;
+  margin-left: auto;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* CHAPTER CARDS */
+
+.chapters-collection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chapter-card {
+  background: var(--champagne);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.chapter-card.expanded {
+  background: var(--cherry);
+  color: var(--ivory);
+}
+
+.chapter-trigger {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  padding: 35px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
+.chapter-number {
+  min-width: 105px;
+  align-self: flex-start;
+  padding-top: 10px;
+  color: var(--berry);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.chapter-card.expanded .chapter-number {
+  color: var(--gold);
+}
+
+.chapter-heading {
+  flex: 1;
+}
+
+.chapter-subtitle {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--berry);
+}
+
+.chapter-card.expanded .chapter-subtitle {
+  color: var(--rose);
+}
+
+.chapter-heading h3 {
+  font-size: clamp(31px, 4vw, 56px);
+  line-height: 1.15;
+  margin: 10px 0 0;
+}
+
+.chapter-icon {
+  color: var(--berry);
+}
+
+.chapter-card.expanded .chapter-icon {
+  color: var(--gold);
+}
+
+.chapter-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.chapter-card.expanded .chapter-chevron {
+  transform: rotate(180deg);
+}
+
+/* EXPANDED CONTENT */
+
+.chapter-content {
+  padding: 0 35px 40px 165px;
+  animation: chapter-reveal 0.35s ease;
+}
+
+.chapter-entry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.chapter-entry {
+  min-height: 205px;
+  padding: 25px;
+  border: 1px solid rgba(238, 219, 204, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 247, 239, 0.045);
+}
+
+.chapter-entry-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.chapter-entry h4 {
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 22px 0 10px;
+}
+
+.chapter-organization {
+  color: var(--rose);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.chapter-entry p {
+  color: var(--champagne);
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+
+@keyframes chapter-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FOOTER */
+
+.chapters-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 65px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(83, 27, 43, 0.2);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.chapters-footer span:last-child {
+  color: var(--gold);
+  font-size: 28px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .chapter-content {
+    padding-left: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chapters-section {
+    padding: 85px 6% 45px;
+  }
+
+  .chapters-header {
+    margin-bottom: 45px;
+  }
+
+  .chapters-header h2 {
+    font-size: clamp(52px, 11vw, 85px);
+  }
+
+  .chapters-header > p {
+    margin-left: 0;
+  }
+
+  .chapter-trigger {
+    gap: 14px;
+    padding: 24px 18px;
+    flex-wrap: wrap;
+  }
+
+  .chapter-number {
+    min-width: 100%;
+    padding-top: 0;
+  }
+
+  .chapter-heading h3 {
+    font-size: 30px;
+  }
+
+  .chapter-icon {
+    display: none;
+  }
+
+  .chapter-chevron {
+    width: 34px;
+    height: 34px;
+  }
+
+  .chapter-content {
+    padding: 0 18px 25px;
+  }
+
+  .chapter-entry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-entry {
+    min-height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapter-card,
+  .chapter-chevron {
+    transition: none;
+  }
+
+  .chapter-content {
+    animation: none;
+  }
+}
